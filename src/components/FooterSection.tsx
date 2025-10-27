@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 
 const FooterSection = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="py-12 px-4 mt-8">
       <motion.div
@@ -11,10 +13,7 @@ const FooterSection = () => {
         className="max-w-4xl mx-auto text-center space-y-3"
       >
         <p className="text-muted-foreground">
-          Copyright © 2025 <span className="font-semibold text-foreground">Pulkart</span>
-        </p>
-        <p className="text-sm text-muted-foreground">
-          Designed & Developed by <span className="font-semibold text-primary">Subhojit Das</span>
+          Copyright © {currentYear} <span className="font-semibold text-foreground">Pulkart</span>
         </p>
       </motion.div>
     </footer>

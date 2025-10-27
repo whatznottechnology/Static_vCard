@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, Globe } from "lucide-react";
+import { Phone, Mail, Globe, MapPin } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
 
 const contactItems = [
@@ -20,6 +20,12 @@ const contactItems = [
     label: "Website",
     value: "pulkart.com",
     href: "https://pulkart.com",
+  },
+  {
+    icon: MapPin,
+    label: "Address",
+    value: "Narayanpur, Malda, West Bengal, India - 732141",
+    href: "https://maps.google.com/?q=Narayanpur,Malda,West+Bengal,India,732141",
   },
 ];
 

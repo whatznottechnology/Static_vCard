@@ -7,18 +7,49 @@ import MapSection from "@/components/MapSection";
 import FooterSection from "@/components/FooterSection";
 import StickyButtons from "@/components/StickyButtons";
 import ThemeToggle from "@/components/ThemeToggle";
+import Navigation from "@/components/Navigation";
+import { useEffect, useState } from "react";
 
 const Index = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="min-h-screen relative">
       <ThemeToggle />
-      <Header />
-      <AboutSection />
-      <ContactSection />
-      <SocialSection />
-      <Gallery />
-      <MapSection />
-      <FooterSection />
+      <Navigation isMobile={isMobile} />
+      <div className="lg:pl-20 md:pl-14">
+        <section id="header">
+          <Header />
+        </section>
+        <section id="about">
+          <AboutSection />
+        </section>
+        <section id="contact">
+          <ContactSection />
+        </section>
+        <section id="social">
+          <SocialSection />
+        </section>
+        <section id="gallery">
+          <Gallery />
+        </section>
+        <section id="map">
+          <MapSection />
+        </section>
+        <div className="pb-20 md:pb-0">
+          <FooterSection />
+        </div>
+      </div>
       <StickyButtons />
     </div>
   );

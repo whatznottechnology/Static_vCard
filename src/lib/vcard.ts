@@ -8,7 +8,8 @@ TITLE:Founder & Owner
 TEL;TYPE=CELL:+918653563069
 EMAIL:pulkart20692025@gmail.com
 URL:https://pulkart.com
-NOTE:Founder of Pulkart - Your Online Store for Quality & Trust
+ADR;TYPE=WORK:;;Narayanpur;Malda;West Bengal;732141;India
+NOTE:Founder of Pulkart - Your Online Store for Quality & Trust. Located in Narayanpur, Malda, West Bengal, India.
 END:VCARD`;
   
   return vcard;

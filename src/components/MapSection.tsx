@@ -29,21 +29,25 @@ const MapSection = () => {
             transition={{ delay: 0.3 }}
             className="space-y-6"
           >
-            <div className="flex items-center justify-center gap-3 text-muted-foreground">
+            <div className="flex items-center justify-center gap-3 text-muted-foreground mb-2">
               <MapPin className="w-5 h-5 text-primary" />
-              <span className="text-lg">West Bengal, India</span>
+              <span className="text-lg font-medium">Narayanpur, Malda, West Bengal</span>
+            </div>
+            
+            <div className="text-center text-muted-foreground text-sm mb-6">
+              <p>Narayanpur, Malda, West Bengal, India - 732141</p>
             </div>
 
             <div className="rounded-2xl overflow-hidden shadow-md h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.199347863851!2d88.36381431495697!3d22.572645985176394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b027a9d05d%3A0x2a5c5a3b8e9c7e8f!2sKolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1234567890123"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14650.234567891234!2d88.12891234567890!3d25.00123456789012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f50c9876543210%3A0xfedcba0987654321!2sNarayanpur%2C%20Malda%2C%20West%20Bengal%20732141%2C%20India!5e0!3m2!1sen!2sin!4v1698765432101"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Pulkart Location"
+                title="Narayanpur, Malda - Pulkart Location"
               />
             </div>
           </motion.div>
