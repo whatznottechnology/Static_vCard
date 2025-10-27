@@ -1,19 +1,25 @@
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Contact from "@/components/Contact";
-import Social from "@/components/Social";
-import QRSection from "@/components/QRSection";
-import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import AboutSection from "@/components/AboutSection";
+import ContactSection from "@/components/ContactSection";
+import SocialSection from "@/components/SocialSection";
+import Gallery from "@/components/Gallery";
+import MapSection from "@/components/MapSection";
+import FooterSection from "@/components/FooterSection";
+import StickyButtons from "@/components/StickyButtons";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <About />
-      <Contact />
-      <Social />
-      <QRSection />
-      <Footer />
+    <div className="min-h-screen relative">
+      <ThemeToggle />
+      <Header />
+      <AboutSection />
+      <ContactSection />
+      <SocialSection />
+      <Gallery />
+      <MapSection />
+      <FooterSection />
+      <StickyButtons />
     </div>
   );
 };
