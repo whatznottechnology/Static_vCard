@@ -6,26 +6,32 @@ const contactItems = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 8653563069",
-    href: "tel:+918653563069",
+    value: "+91 9735151074",
+    href: "tel:+919735151074",
   },
   {
     icon: Mail,
     label: "Email",
-    value: "pulkart20692025@gmail.com",
-    href: "mailto:pulkart20692025@gmail.com",
+    value: "pritam@whatznot.com",
+    href: "mailto:pritam@whatznot.com",
   },
   {
     icon: Globe,
     label: "Website",
-    value: "pulkart.com",
-    href: "https://pulkart.com",
+    value: "whatznot.com",
+    href: "https://whatznot.com",
+  },
+  {
+    icon: Globe,
+    label: "Service Portal",
+    value: "servicemedium.com",
+    href: "https://servicemedium.com",
   },
   {
     icon: MapPin,
     label: "Address",
-    value: "Narayanpur, Malda, West Bengal, India - 732141",
-    href: "https://maps.google.com/?q=Narayanpur,Malda,West+Bengal,India,732141",
+    value: "Chakdaha, Nadia, West Bengal, India - 741222",
+    href: "https://maps.google.com/?q=Chakdaha,Nadia,West+Bengal,India,741222",
   },
 ];
 
@@ -87,15 +93,15 @@ const ContactSection = () => {
             >
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <QRCodeSVG
-                  value="https://pulkart.com"
+                  value="https://whatznot.com"
                   size={180}
                   level="H"
                   includeMargin={false}
-                  fgColor="#22c55e"
+                  fgColor="#059669"
                 />
               </div>
               <p className="mt-4 text-sm text-muted-foreground font-medium">
-                Scan to visit website
+                Scan to visit whatznot.com
               </p>
             </motion.div>
           </div>

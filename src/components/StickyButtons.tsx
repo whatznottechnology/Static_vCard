@@ -6,7 +6,7 @@ const StickyButtons = () => {
   return (
     <div className="fixed bottom-6 md:bottom-6 right-6 flex flex-col gap-3 z-40 mb-20 md:mb-0">
       <motion.a
-        href="tel:+918653563069"
+        href="tel:+919735151074"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring", stiffness: 200 }}
@@ -19,7 +19,7 @@ const StickyButtons = () => {
       </motion.a>
 
       <motion.a
-        href="https://wa.me/918653563069"
+        href="https://wa.me/919735151074"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0, opacity: 0 }}
@@ -34,7 +34,7 @@ const StickyButtons = () => {
       </motion.a>
 
       <motion.a
-        href="mailto:pulkart20692025@gmail.com"
+        href="mailto:pritam@whatznot.com"
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1.4, type: "spring", stiffness: 200 }}

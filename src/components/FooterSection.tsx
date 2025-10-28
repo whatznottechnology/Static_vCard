@@ -13,7 +13,7 @@ const FooterSection = () => {
         className="max-w-4xl mx-auto text-center space-y-3"
       >
         <p className="text-muted-foreground">
-          Copyright © {currentYear} <span className="font-semibold text-foreground">Pulkart</span>
+          Copyright © {currentYear} <span className="font-semibold text-foreground">Pritam Mandal</span>
         </p>
       </motion.div>
     </footer>

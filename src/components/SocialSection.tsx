@@ -1,30 +1,30 @@
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Send, Globe } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Github } from "lucide-react";
 
 const socialLinks = [
   {
-    name: "Instagram",
-    icon: Instagram,
-    url: "https://www.instagram.com/pulkart_2025?igsh=MWhncmthMGc0czNvYg==",
-    color: "bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500",
-  },
-  {
     name: "Facebook",
     icon: Facebook,
-    url: "https://www.facebook.com/share/15HB7aW2Mtn/",
+    url: "https://www.facebook.com/hellopritammandal/",
     color: "bg-gradient-to-br from-blue-600 to-blue-500",
   },
   {
-    name: "Telegram",
-    icon: Send,
-    url: "https://t.me/pulkart",
-    color: "bg-gradient-to-br from-sky-500 to-blue-600",
+    name: "Instagram",
+    icon: Instagram,
+    url: "http://instagram.com/hello_pritam_",
+    color: "bg-gradient-to-br from-purple-500 via-pink-500 to-rose-500",
   },
   {
-    name: "Website",
-    icon: Globe,
-    url: "https://pulkart.com",
-    color: "bg-gradient-to-br from-green-600 to-emerald-500",
+    name: "LinkedIn",
+    icon: Linkedin,
+    url: "https://www.linkedin.com/in/hello-pritam/",
+    color: "bg-gradient-to-br from-blue-700 to-blue-600",
+  },
+  {
+    name: "GitHub",
+    icon: Github,
+    url: "https://github.com/whatznottechnology/",
+    color: "bg-gradient-to-br from-gray-800 to-gray-700",
   },
 ];
 

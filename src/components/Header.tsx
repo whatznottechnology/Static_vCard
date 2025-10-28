@@ -11,7 +11,7 @@ const Header = () => {
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "subhojit-das-pulkart.vcf";
+    link.download = "pritam-mandal-contact.vcf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -38,7 +38,7 @@ const Header = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-full blur-2xl opacity-20 animate-pulse" />
               <img
                 src={profilePhoto}
-                alt="Subhojit Das"
+                alt="Pritam Mandal"
                 className="relative w-32 h-32 md:w-40 md:h-40 object-cover rounded-full ring-4 ring-white dark:ring-gray-800 shadow-lg"
               />
             </div>
@@ -52,10 +52,13 @@ const Header = () => {
             className="space-y-2"
           >
             <h1 className="text-3xl md:text-5xl font-bold text-foreground">
-              Subhojit Das
+              Pritam Mandal
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground font-medium">
-              Founder & Owner of <span className="text-primary font-semibold">Pulkart</span>
+              Solo Entrepreneur & Developer
+            </p>
+            <p className="text-base md:text-lg text-muted-foreground">
+              Founder of <span className="text-primary font-semibold">whatznot.com</span> & <span className="text-primary font-semibold">servicemedium.com</span>
             </p>
           </motion.div>
 

@@ -1,15 +1,16 @@
 export const generateVCard = (): string => {
   const vcard = `BEGIN:VCARD
 VERSION:3.0
-FN:Subhojit Das
-N:Das;Subhojit;;;
-ORG:Pulkart
-TITLE:Founder & Owner
-TEL;TYPE=CELL:+918653563069
-EMAIL:pulkart20692025@gmail.com
-URL:https://pulkart.com
-ADR;TYPE=WORK:;;Narayanpur;Malda;West Bengal;732141;India
-NOTE:Founder of Pulkart - Your Online Store for Quality & Trust. Located in Narayanpur, Malda, West Bengal, India.
+FN:Pritam Mandal
+N:Mandal;Pritam;;;
+ORG:Whatznot Technology
+TITLE:Solo Entrepreneur & Developer
+TEL;TYPE=CELL:+919735151074
+EMAIL:pritam@whatznot.com
+URL:https://whatznot.com
+URL:https://servicemedium.com
+ADR;TYPE=WORK:;;Chakdaha;Nadia;West Bengal;741222;India
+NOTE:Solo Entrepreneur with 10+ years experience. Founder of whatznot.com & servicemedium.com. Expert in PHP, Laravel, Django, Python & 15+ technologies.
 END:VCARD`;
   
   return vcard;
@@ -17,9 +18,9 @@ END:VCARD`;
 
 export const shareProfile = async () => {
   const shareData = {
-    title: 'Pulkart - Digital Visiting Card',
-    text: 'Connect with Pulkart - Your Online Store for Quality & Trust. Founded by Subhojit Das.',
-    url: 'https://pulkart.com',
+    title: 'Pritam Mandal - Digital Visiting Card',
+    text: 'Connect with Pritam Mandal - Solo Entrepreneur & Developer with 10+ years experience. Founder of whatznot.com & servicemedium.com.',
+    url: 'https://whatznot.com',
   };
 
   try {
