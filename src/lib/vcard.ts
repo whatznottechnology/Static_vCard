@@ -6,7 +6,8 @@ N:Mandal;Pritam;;;
 ORG:Whatznot Technology
 TITLE:Solo Entrepreneur & Developer
 TEL;TYPE=CELL:+919735151074
-EMAIL:pritam@whatznot.com
+EMAIL:pritammandal@whatznot.com
+URL:https://pritam.whatznot.com
 URL:https://whatznot.com
 URL:https://servicemedium.com
 ADR;TYPE=WORK:;;Chakdaha;Nadia;West Bengal;741222;India
@@ -20,7 +21,7 @@ export const shareProfile = async () => {
   const shareData = {
     title: 'Pritam Mandal - Digital Visiting Card',
     text: 'Connect with Pritam Mandal - Solo Entrepreneur & Developer with 10+ years experience. Founder of whatznot.com & servicemedium.com.',
-    url: 'https://whatznot.com',
+    url: 'https://pritam.whatznot.com',
   };
 
   try {
