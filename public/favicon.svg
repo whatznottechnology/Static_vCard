@@ -1,15 +1,7 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background Circle with Gradient -->
-  <circle cx="32" cy="32" r="32" fill="url(#gradient)"/>
+  <!-- Black Background Circle -->
+  <circle cx="32" cy="32" r="32" fill="#000000"/>
   
-  <!-- Letter P -->
-  <path d="M20 16 L20 48 L24 48 L24 34 L36 34 C42 34 46 30 46 25 C46 20 42 16 36 16 L20 16 Z M24 20 L36 20 C39.3 20 42 22.7 42 25 C42 27.3 39.3 30 36 30 L24 30 L24 20 Z" fill="white"/>
-  
-  <!-- Gradient Definition -->
-  <defs>
-    <linearGradient id="gradient" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="100%" stop-color="#8b5cf6"/>
-    </linearGradient>
-  </defs>
+  <!-- White Letter P -->
+  <path d="M20 16 L20 48 L24 48 L24 34 L36 34 C42 34 46 30 46 25 C46 20 42 16 36 16 L20 16 Z M24 20 L36 20 C39.3 20 42 22.7 42 25 C42 27.3 39.3 30 36 30 L24 30 L24 20 Z" fill="#FFFFFF"/>
 </svg>
