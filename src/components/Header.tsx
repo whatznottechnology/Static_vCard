@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Download, Share2 } from "lucide-react";
+import { Download, Share2, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { generateVCard, shareProfile } from "@/lib/vcard";
+import { generateVCard } from "@/lib/vcard";
 import profilePhoto from "@/assets/profile-photo.png";
+import ShareDialog from "./ShareDialog";
 
 const Header = () => {
+  const [shareDialogOpen, setShareDialogOpen] = useState(false);
+
   const handleDownloadVCard = () => {
     const vcard = generateVCard();
     const blob = new Blob([vcard], { type: "text/vcard" });
@@ -58,7 +62,24 @@ const Header = () => {
               Solo Entrepreneur & Developer
             </p>
             <p className="text-base md:text-lg text-muted-foreground">
-              Founder of <span className="text-primary font-semibold">whatznot.com</span> & <span className="text-primary font-semibold">servicemedium.com</span>
+              Founder of{" "}
+              <a 
+                href="https://whatznot.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary font-semibold hover:underline hover:text-primary/80 smooth-transition"
+              >
+                whatznot.com
+              </a>
+              {" "}&{" "}
+              <a 
+                href="https://servicemedium.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary font-semibold hover:underline hover:text-primary/80 smooth-transition"
+              >
+                servicemedium.com
+              </a>
             </p>
           </motion.div>
 
@@ -67,28 +88,60 @@ const Header = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col gap-4"
           >
-            <Button
-              onClick={handleDownloadVCard}
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-white font-medium rounded-full px-8 shadow-md hover:shadow-lg smooth-transition"
-            >
-              <Download className="mr-2 h-5 w-5" />
-              Exchange Contact
-            </Button>
-            <Button
-              onClick={shareProfile}
-              size="lg"
-              variant="outline"
-              className="border-2 hover:bg-secondary font-medium rounded-full px-8 smooth-transition"
-            >
-              <Share2 className="mr-2 h-5 w-5" />
-              Share Profile
-            </Button>
+            {/* Primary Actions */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                onClick={handleDownloadVCard}
+                size="lg"
+                className="bg-primary hover:bg-primary/90 dark:bg-primary dark:hover:bg-primary/90 text-white font-medium rounded-full px-8 shadow-md hover:shadow-lg smooth-transition"
+              >
+                <Download className="mr-2 h-5 w-5" />
+                Exchange Contact
+              </Button>
+              <Button
+                onClick={() => setShareDialogOpen(true)}
+                size="lg"
+                variant="outline"
+                className="border-2 border-primary dark:border-primary text-primary dark:text-primary hover:bg-primary dark:hover:bg-primary hover:text-white dark:hover:text-white hover:border-primary dark:hover:border-primary font-medium rounded-full px-8 smooth-transition"
+              >
+                <Share2 className="mr-2 h-5 w-5" />
+                Share Profile
+              </Button>
+            </div>
+
+            {/* Call & WhatsApp Buttons */}
+            <div className="grid grid-cols-2 gap-3 sm:flex sm:gap-4 justify-center">
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-green-600 dark:border-green-500 text-green-700 dark:text-green-400 hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:hover:text-white hover:border-green-600 dark:hover:border-green-600 font-medium rounded-full px-6 sm:px-8 smooth-transition group"
+              >
+                <a href="tel:+919735151074">
+                  <Phone className="mr-2 h-5 w-5" />
+                  Call Now
+                </a>
+              </Button>
+              <Button
+                asChild
+                size="lg"
+                variant="outline"
+                className="border-2 border-green-600 dark:border-green-500 text-green-700 dark:text-green-400 hover:bg-green-600 dark:hover:bg-green-600 hover:text-white dark:hover:text-white hover:border-green-600 dark:hover:border-green-600 font-medium rounded-full px-6 sm:px-8 smooth-transition group"
+              >
+                <a href="https://wa.me/919735151074" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle className="mr-2 h-5 w-5" />
+                  WhatsApp
+                </a>
+              </Button>
+            </div>
           </motion.div>
         </motion.div>
       </div>
+
+      {/* Share Dialog */}
+      <ShareDialog open={shareDialogOpen} onOpenChange={setShareDialogOpen} />
     </header>
   );
 };

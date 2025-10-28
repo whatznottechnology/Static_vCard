@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Phone, Mail, Globe, MapPin } from "lucide-react";
+import { Phone, Mail, Globe, MapPin, MessageCircle } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
+import { Button } from "@/components/ui/button";
 
 const contactItems = [
   {
@@ -8,30 +9,21 @@ const contactItems = [
     label: "Phone",
     value: "+91 9735151074",
     href: "tel:+919735151074",
+    description: "Available Mon-Sat, 10 AM - 7 PM IST",
   },
   {
     icon: Mail,
     label: "Email",
     value: "pritam@whatznot.com",
     href: "mailto:pritam@whatznot.com",
-  },
-  {
-    icon: Globe,
-    label: "Website",
-    value: "whatznot.com",
-    href: "https://whatznot.com",
-  },
-  {
-    icon: Globe,
-    label: "Service Portal",
-    value: "servicemedium.com",
-    href: "https://servicemedium.com",
+    description: "Professional inquiries welcome",
   },
   {
     icon: MapPin,
     label: "Address",
     value: "Chakdaha, Nadia, West Bengal, India - 741222",
     href: "https://maps.google.com/?q=Chakdaha,Nadia,West+Bengal,India,741222",
+    description: "Open for local collaborations",
   },
 ];
 
@@ -51,33 +43,73 @@ const ContactSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center"
+            className="text-2xl md:text-3xl font-bold text-foreground mb-2 text-center"
           >
-            Contact Information
+            Get In Touch
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="text-muted-foreground text-center mb-8"
+          >
+            Feel free to reach out for collaborations, projects, or just to connect!
+          </motion.p>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          {/* Quick Action Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+          >
+            <Button
+              asChild
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-700 text-white font-medium rounded-full px-8 shadow-md hover:shadow-lg smooth-transition"
+            >
+              <a href="tel:+919735151074">
+                <Phone className="mr-2 h-5 w-5" />
+                Call Now
+              </a>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-green-600 hover:bg-green-700 dark:bg-green-600 dark:hover:bg-green-700 text-white font-medium rounded-full px-8 shadow-md hover:shadow-lg smooth-transition"
+            >
+              <a href="https://wa.me/919735151074" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                WhatsApp
+              </a>
+            </Button>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             {/* Contact Details */}
             <div className="space-y-4">
               {contactItems.map((item, index) => (
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  target={item.label === "Website" ? "_blank" : undefined}
-                  rel={item.label === "Website" ? "noopener noreferrer" : undefined}
+                  target={item.label === "Website" || item.label === "Service Portal" ? "_blank" : undefined}
+                  rel={item.label === "Website" || item.label === "Service Portal" ? "noopener noreferrer" : undefined}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
+                  transition={{ delay: 0.5 + index * 0.1 }}
                   whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 rounded-2xl bg-secondary/50 hover:bg-secondary smooth-transition group"
+                  className="flex items-start gap-4 p-4 rounded-2xl bg-secondary/50 hover:bg-secondary/80 dark:hover:bg-secondary smooth-transition group cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary group-hover:scale-110 smooth-transition">
-                    <item.icon className="w-6 h-6 text-primary group-hover:text-white smooth-transition" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary dark:group-hover:bg-primary group-hover:scale-110 smooth-transition flex-shrink-0">
+                    <item.icon className="w-6 h-6 text-primary group-hover:text-white dark:group-hover:text-white smooth-transition" />
                   </div>
-                  <div className="flex-1">
+                  <div className="flex-1 min-w-0">
                     <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
-                    <p className="font-semibold text-foreground break-all">{item.value}</p>
+                    <p className="font-semibold text-foreground break-words mb-1">{item.value}</p>
+                    <p className="text-xs text-muted-foreground">{item.description}</p>
                   </div>
                 </motion.a>
               ))}
@@ -88,20 +120,31 @@ const ContactSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.5 }}
+              transition={{ delay: 0.8 }}
               className="flex flex-col items-center justify-center"
             >
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <QRCodeSVG
-                  value="https://whatznot.com"
+                  value="https://pritam.whatznot.com"
                   size={180}
                   level="H"
                   includeMargin={false}
                   fgColor="#059669"
                 />
               </div>
-              <p className="mt-4 text-sm text-muted-foreground font-medium">
-                Scan to visit whatznot.com
+              <p className="mt-4 text-sm text-muted-foreground font-medium text-center">
+                Scan to visit{" "}
+                <a 
+                  href="https://pritam.whatznot.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline hover:text-primary/80 font-semibold smooth-transition"
+                >
+                  pritam.whatznot.com
+                </a>
+              </p>
+              <p className="mt-2 text-xs text-muted-foreground text-center max-w-xs">
+                Visit my digital profile
               </p>
             </motion.div>
           </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Linkedin, Github } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Github, Briefcase } from "lucide-react";
 
 const socialLinks = [
   {
@@ -26,6 +26,12 @@ const socialLinks = [
     url: "https://github.com/whatznottechnology/",
     color: "bg-gradient-to-br from-gray-800 to-gray-700",
   },
+  {
+    name: "Freelancer",
+    icon: Briefcase,
+    url: "https://www.freelancer.com/u/Whatznot",
+    color: "bg-gradient-to-br from-blue-500 to-cyan-500",
+  },
 ];
 
 const SocialSection = () => {
@@ -49,7 +55,7 @@ const SocialSection = () => {
             Connect on Social Media
           </motion.h2>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {socialLinks.map((social, index) => (
               <motion.a
                 key={social.name}
@@ -64,11 +70,11 @@ const SocialSection = () => {
                 whileTap={{ scale: 0.95 }}
                 className="group"
               >
-                <div className="flex items-center gap-3 px-6 py-4 bg-secondary/50 hover:bg-secondary rounded-full smooth-transition">
-                  <div className={`w-10 h-10 rounded-full ${social.color} flex items-center justify-center shadow-md group-hover:shadow-lg smooth-transition`}>
-                    <social.icon className="w-5 h-5 text-white" />
+                <div className="flex flex-col items-center gap-3 p-6 bg-secondary/50 hover:bg-secondary rounded-2xl smooth-transition h-full">
+                  <div className={`w-14 h-14 rounded-full ${social.color} flex items-center justify-center shadow-md group-hover:shadow-lg smooth-transition`}>
+                    <social.icon className="w-7 h-7 text-white" />
                   </div>
-                  <span className="font-semibold text-foreground">{social.name}</span>
+                  <span className="font-semibold text-foreground text-center text-sm">{social.name}</span>
                 </div>
               </motion.a>
             ))}

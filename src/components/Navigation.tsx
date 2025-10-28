@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Home, User, Phone, MessageSquare, MapPin } from "lucide-react";
+import { Home, User, Phone, Share2, MessageSquare, MapPin, Building2 } from "lucide-react";
 
 interface NavigationProps {
   isMobile: boolean;
@@ -11,9 +11,11 @@ const Navigation = ({ isMobile }: NavigationProps) => {
 
   const navItems = [
     { id: "header", label: "Home", icon: Home },
+    { id: "companies", label: "Companies", icon: Building2 },
     { id: "about", label: "About", icon: User },
     { id: "contact", label: "Contact", icon: Phone },
-    { id: "social", label: "Social", icon: MessageSquare },
+    { id: "social", label: "Social", icon: Share2 },
+    { id: "contact-form", label: "Message", icon: MessageSquare },
     { id: "map", label: "Location", icon: MapPin },
   ];
 
@@ -55,8 +57,8 @@ const Navigation = ({ isMobile }: NavigationProps) => {
         animate={{ opacity: 1, y: 0 }}
         className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-safe"
       >
-        <div className="bg-card/95 backdrop-blur-md border-t border-border">
-          <div className="flex items-center justify-around px-2 py-2">
+        <div className="bg-card/98 backdrop-blur-xl border-t border-border/80 shadow-2xl">
+          <div className="flex items-center justify-around px-2 py-3">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
@@ -64,25 +66,27 @@ const Navigation = ({ isMobile }: NavigationProps) => {
                 <motion.button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  whileTap={{ scale: 0.9 }}
-                  className="flex flex-col items-center justify-center p-2 min-w-0 flex-1"
+                  whileTap={{ scale: 0.85 }}
+                  className="relative flex items-center justify-center"
                 >
                   <div
-                    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 ${
+                    className={`w-12 h-12 rounded-2xl flex items-center justify-center transition-all duration-300 ${
                       isActive
-                        ? "bg-primary text-white shadow-lg"
-                        : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                        ? "bg-gradient-to-br from-primary via-primary to-primary/90 text-white shadow-lg shadow-primary/40 scale-105"
+                        : "text-muted-foreground active:bg-muted/50"
                     }`}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className={`w-5 h-5 transition-all duration-300 ${isActive ? 'scale-110' : ''}`} />
                   </div>
-                  <span
-                    className={`text-xs mt-1 font-medium transition-colors duration-200 ${
-                      isActive ? "text-primary" : "text-muted-foreground"
-                    }`}
-                  >
-                    {item.label}
-                  </span>
+                  
+                  {/* Active Indicator Dot */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeIndicator"
+                      className="absolute -bottom-1 w-1.5 h-1.5 rounded-full bg-primary"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  )}
                 </motion.button>
               );
             })}

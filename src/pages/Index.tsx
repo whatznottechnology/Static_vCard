@@ -1,8 +1,9 @@
 import Header from "@/components/Header";
+import CompaniesSection from "@/components/CompaniesSection";
 import AboutSection from "@/components/AboutSection";
 import ContactSection from "@/components/ContactSection";
 import SocialSection from "@/components/SocialSection";
-import Gallery from "@/components/Gallery";
+import ContactForm from "@/components/ContactForm";
 import MapSection from "@/components/MapSection";
 import FooterSection from "@/components/FooterSection";
 import StickyButtons from "@/components/StickyButtons";
@@ -31,6 +32,9 @@ const Index = () => {
         <section id="header">
           <Header />
         </section>
+        <section id="companies">
+          <CompaniesSection />
+        </section>
         <section id="about">
           <AboutSection />
         </section>
@@ -40,8 +44,8 @@ const Index = () => {
         <section id="social">
           <SocialSection />
         </section>
-        <section id="gallery">
-          <Gallery />
+        <section id="contact-form">
+          <ContactForm />
         </section>
         <section id="map">
           <MapSection />
