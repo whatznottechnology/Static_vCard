@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Building2, ExternalLink } from "lucide-react";
-import whatznotLogo from "@/assets/Screenshot_2025-10-28_201227-removebg-preview.png";
-import serviceMediumLogo from "@/assets/logo.5ef31c35.svg";
+import whatznotLogo from "@/assets/logo.5ef31c35.svg";
+import serviceMediumLogo from "@/assets/Screenshot_2025-10-28_201227-removebg-preview.png";
 
 const CompaniesSection = () => {
   const companies = [

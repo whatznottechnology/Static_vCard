@@ -125,7 +125,7 @@ const ContactSection = () => {
             >
               <div className="bg-white p-6 rounded-2xl shadow-lg">
                 <QRCodeSVG
-                  value="https://pritam.whatznot.com"
+                  value="https://pritam.whatznot.com/download-vcard"
                   size={180}
                   level="H"
                   includeMargin={false}
@@ -133,18 +133,10 @@ const ContactSection = () => {
                 />
               </div>
               <p className="mt-4 text-sm text-muted-foreground font-medium text-center">
-                Scan to visit{" "}
-                <a 
-                  href="https://pritam.whatznot.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline hover:text-primary/80 font-semibold smooth-transition"
-                >
-                  pritam.whatznot.com
-                </a>
+                Scan to download vCard
               </p>
               <p className="mt-2 text-xs text-muted-foreground text-center max-w-xs">
-                Visit my digital profile
+                Save contact instantly
               </p>
             </motion.div>
           </div>
